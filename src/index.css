@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --spacing-navbar: 96px;
+  --home-height: calc(100vh - var(--spacing-navbar));
+  --color-accent: #15616d;
+  --color-background: #fdfffc;
+  --color-text: #212529;
+  --color-background-dark: #212529;
+  --color-text-dark: #fdfffc;
+}
