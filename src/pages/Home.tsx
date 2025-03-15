@@ -4,13 +4,26 @@ import LinkedInIcon from "../components/LinkedInIcon";
 
 export const Home = () => {
   return (
-    <div className="min-h-[var(--home-height)] flex flex-col md:flex-row items-center justify-evenly">
-      <div className="flex flex-col items-start justify-center w-full md:w-1/2 space-y-4">
+    <div
+      className="min-h-screen flex flex-col md:flex-row items-center justify-evenly relative bg-[url('/src/assets/background.webp')] bg-no-repeat bg-cover bg-center px-4 md:px-10 lg:px-20 xl:px-40"
+      style={{
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="flex flex-col items-center justify-center w-full md:w-1/2 space-y-4">
+        <img
+          src="https://avatars.githubusercontent.com/u/104137891?v=4"
+          alt="avatar"
+          className="w-48 h-48 md:w-64 md:h-64 rounded-full"
+        />
+      </div>
+      <div className="flex flex-col items-start justify-center w-full md:w-1/2 space-y-4 bg-background/20 dark:bg-background-dark/20 backdrop-blur-sm rounded-xl p-6">
         <h1 className="text-4xl md:text-6xl font-bold w-full text-center md:text-start text-accent">
           Charly RM
         </h1>
         <p className="text-xl">
-          Hello! I'm Charly, a passionate{" "}
+          Hello! I'm Charly, apassionate{" "}
           <span className="text-accent font-bold">web developer</span> with
           experience in building digital solutions that combine functionality
           and design. I specialize in creating modern, responsive web
@@ -20,13 +33,6 @@ export const Home = () => {
           My goal is to create seamless user experiences while embracing the
           latest industry trends.
         </p>
-      </div>
-      <div className="flex flex-col items-center justify-center w-full md:w-1/2 space-y-4">
-        <img
-          src="https://avatars.githubusercontent.com/u/104137891?v=4"
-          alt="avatar"
-          className="w-64 h-64 rounded-full"
-        />
         <div className="flex flex-col items-center justify-center space-y-2 w-full">
           <h2 className="text-xl font-bold">Connect with me</h2>
           <div className="flex space-x-2">
@@ -36,27 +42,27 @@ export const Home = () => {
               rel="noreferrer"
               className="flex items-center space-x-2 hover:text-gray-300"
             >
-              <GitIcon />
+              <GitIcon className="w-6 h-6" />
               <span>GitHub</span>
             </a>
-            <span className="w-0.5 h-6 bg-accent"></span>
+            <span className="w-0.5 h-6 bg-background-dark dark:bg-background"></span>
             <a
               href="https://www.linkedin.com/in/darckly666"
               target="_blank"
               rel="noreferrer"
               className="flex items-center space-x-2 hover:text-gray-300"
             >
-              <LinkedInIcon />
+              <LinkedInIcon className="w-6 h-6" />
               <span>LinkedIn</span>
             </a>
-            <span className="w-0.5 h-6 bg-accent"></span>
+            <span className="w-0.5 h-6 bg-background-dark dark:bg-background"></span>
             <a
               href="https://www.gmail.com"
               target="_blank"
               rel="noreferrer"
               className="flex items-center space-x-2 hover:text-gray-300"
             >
-              <GmailIcon />
+              <GmailIcon className="w-6 h-6" />
               <span>Gmail</span>
             </a>
           </div>
