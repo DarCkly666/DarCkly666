@@ -12,14 +12,17 @@ import nodejs from "../assets/icons/nodejs.svg";
 import react from "../assets/icons/React_light.svg";
 import tailwind from "../assets/icons/tailwindcss.svg";
 import illustrator from "../assets/icons/illustrator.svg";
+import { Slide } from "react-awesome-reveal";
 
 export const Techs = () => {
   return (
     <div id="techs" className="w-full flex flex-col space-y-5 pt-16">
       <div className="flex items-end justify-between">
-        <h2 className="text-2xl md:text-4xl font-bold text-accent me-5 md:me-10">
-          Technologies
-        </h2>
+        <Slide>
+          <h2 className="text-2xl md:text-4xl font-bold text-accent me-5 md:me-10">
+            Technologies
+          </h2>
+        </Slide>
         <span className="w-full bg-accent h-1 md:h-1.5 -skew-x-[55deg]"></span>
       </div>
       <div className="h-auto py-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 md:gap-6 lg:gap-8 xl:gap-10">

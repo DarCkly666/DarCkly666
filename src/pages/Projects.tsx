@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { ProjectItem } from "../components/ProjectItem";
+import { Fade, Slide } from "react-awesome-reveal";
+import Slider from "react-slick";
 
 export interface IProject {
   id: number | string;
@@ -43,6 +45,7 @@ const PROJECTS: IProject[] = [
 export const Projects = () => {
   const [projects, setProjects] = useState<IProject[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [breakpoint, setBreakpoint] = useState<number>(0);
 
   useEffect(() => {
     const fetchProjects = () => {
@@ -52,24 +55,47 @@ export const Projects = () => {
       }, 3000);
     };
     fetchProjects();
+    window.addEventListener("resize", () => {
+      setBreakpoint(window.innerWidth);
+    });
+    return () => {
+      window.removeEventListener("resize", () => {
+        setBreakpoint(window.innerWidth);
+      });
+    };
   }, [projects]);
 
   return (
     <div id="projects" className="w-full flex flex-col space-y-5 pb-16">
       <div className="flex items-end justify-between">
         <span className="w-full bg-accent h-1 md:h-1.5 -skew-x-[55deg]"></span>
-        <h2 className="text-2xl md:text-4xl font-bold text-accent ms-5 md:me-10 text-nowrap">
-          My Projects
-        </h2>
+        <Slide direction="right">
+          <h2 className="text-2xl md:text-4xl font-bold text-accent ms-5 md:me-10 text-nowrap">
+            My Projects
+          </h2>
+        </Slide>
       </div>
       <p className="py-6">Here are some of my projects:</p>
       <div className="md:px-32">
         {isLoading ? (
           <div className="flex items-center justify-center h-full">
-            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-accent"></div>
+            <Fade>
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-accent"></div>
+            </Fade>
           </div>
         ) : (
-          <div className="flex flex-col items-center space-y-5 md:space-y-10 w-full">
+          <Slider
+            {...{
+              dots: true,
+              infinite: true,
+              speed: 500,
+              slidesToShow: breakpoint > 768 ? 2 : 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              fade: true,
+              fadeSpeed: 500,
+            }}
+          >
             {projects.map((project) => (
               <ProjectItem
                 key={project.id}
@@ -82,7 +108,7 @@ export const Projects = () => {
                 techs={project.techs}
               />
             ))}
-          </div>
+          </Slider>
         )}
       </div>
     </div>

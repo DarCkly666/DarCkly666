@@ -27,7 +27,7 @@ export const Navbar = () => {
   return (
     <>
       <div className="w-full flex items-center fixed px-4 md:px-10 lg:px-20 xl:px-40 z-10 py-4 md:py-6">
-        <nav className="justify-between items-center w-full h-full flex p-4 md:p-5 rounded-xl bg-background/20 dark:bg-background-dark/20 backdrop-blur-sm  text-text-dark">
+        <nav className="justify-between items-center w-full h-full flex p-4 md:p-5 rounded-xl bg-background/20 dark:bg-background-dark/20 backdrop-blur-sm text-text dark:text-text-dark">
           <a href="/" className="text-2xl font-bold">
             {data.alias}
           </a>
@@ -38,13 +38,13 @@ export const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#techs" className=" hover:text-slate-500">
-                Technologies
+              <a href="#projects" className="hover:text-slate-500">
+                Projects
               </a>
             </li>
             <li>
-              <a href="#projects" className="hover:text-slate-500">
-                Projects
+              <a href="#techs" className=" hover:text-slate-500">
+                Technologies
               </a>
             </li>
             <li>
@@ -112,13 +112,13 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#techs" className=" hover:text-slate-500">
-              Technologies
+            <a href="#projects" className="hover:text-slate-500">
+              Projects
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-slate-500">
-              Projects
+            <a href="#techs" className=" hover:text-slate-500">
+              Technologies
             </a>
           </li>
           <li>

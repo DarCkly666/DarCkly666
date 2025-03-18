@@ -3,6 +3,7 @@ import GmailIcon from "../components/GmailIcon";
 import LinkedInIcon from "../components/LinkedInIcon";
 import logo from "../assets/logo.webp";
 import { data } from "../utils/constants";
+import { Fade, Slide } from "react-awesome-reveal";
 
 export const Home = () => {
   return (
@@ -15,23 +16,29 @@ export const Home = () => {
       }}
     >
       <div className="flex flex-col items-center justify-center w-full md:w-1/2 space-y-4 mt-32 md:mt-0">
-        <img src={logo} alt="avatar" className="w-80 md:w-4/5" />
+        <Fade>
+          <img src={logo} alt="avatar" className="w-80 md:w-4/5" />
+        </Fade>
       </div>
       <div className="flex flex-col items-start justify-center w-full md:w-1/2 space-y-4 bg-background/20 dark:bg-background-dark/20 backdrop-blur-sm rounded-xl p-6">
-        <h1 className="text-4xl md:text-6xl font-bold w-full text-center md:text-start text-accent">
-          {data.name}
-        </h1>
-        <p className="text-xl text-text-dark dark:text-text-dark/80">
-          Hello! I'm {data.name}, apassionate{" "}
-          <span className="text-accent font-bold">web developer</span> with
-          experience in building digital solutions that combine functionality
-          and design. I specialize in creating modern, responsive web
-          applications using technologies like HTML, CSS, JavaScript, and
-          frameworks like React and Node.js. I'm always eager to learn new tools
-          and improve my skills to deliver innovative and high-quality projects.
-          My goal is to create seamless user experiences while embracing the
-          latest industry trends.
-        </p>
+        <Slide>
+          <h1 className="text-4xl md:text-6xl font-bold w-full text-center md:text-start text-accent">
+            {data.name}
+          </h1>
+        </Slide>
+        <Slide direction="right">
+          <p className="text-xl text-text-dark dark:text-text-dark/80">
+            Hello! I'm {data.name}, apassionate{" "}
+            <span className="text-accent font-bold">web developer</span> with
+            experience in building digital solutions that combine functionality
+            and design. I specialize in creating modern, responsive web
+            applications using technologies like HTML, CSS, JavaScript, and
+            frameworks like React and Node.js. I'm always eager to learn new
+            tools and improve my skills to deliver innovative and high-quality
+            projects. My goal is to create seamless user experiences while
+            embracing the latest industry trends.
+          </p>
+        </Slide>
         <div className="flex flex-col items-center justify-center space-y-2 w-full">
           <h2 className="text-xl font-bold">Connect with me</h2>
           <div className="flex space-x-2">
