@@ -15,7 +15,7 @@ import illustrator from "../assets/icons/illustrator.svg";
 
 export const Techs = () => {
   return (
-    <div className="w-full flex flex-col space-y-5 pt-16">
+    <div id="techs" className="w-full flex flex-col space-y-5 pt-16">
       <div className="flex items-end justify-between">
         <h2 className="text-2xl md:text-4xl font-bold text-accent me-5 md:me-10">
           Technologies

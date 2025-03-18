@@ -1,23 +1,22 @@
 import { useState, useEffect } from "react";
 import { ProjectItem } from "../components/ProjectItem";
 
-interface Project {
+export interface IProject {
   id: number | string;
   name: string;
   description: string;
   url_github: string;
-  url_preview: string;
+  url_preview?: string;
   image: string;
   techs: string[];
 }
 
-const PROJECTS: Project[] = [
+const PROJECTS: IProject[] = [
   {
     id: 1,
     name: "Project 1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     url_github: "https://github.com/darckly666/project1",
-    url_preview: "https://project1.darckly666.vercel.app/",
     image: "https://picsum.photos/id/10/200/300",
     techs: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
   },
@@ -42,7 +41,7 @@ const PROJECTS: Project[] = [
 ];
 
 export const Projects = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<IProject[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -56,7 +55,7 @@ export const Projects = () => {
   }, [projects]);
 
   return (
-    <div className="w-full flex flex-col space-y-5 pb-16 bg-[url('/src/assets/projects_bg.svg')] bg-no-repeat bg-cover bg-center">
+    <div id="projects" className="w-full flex flex-col space-y-5 pb-16">
       <div className="flex items-end justify-between">
         <span className="w-full bg-accent h-1 md:h-1.5 -skew-x-[55deg]"></span>
         <h2 className="text-2xl md:text-4xl font-bold text-accent ms-5 md:me-10 text-nowrap">
@@ -74,6 +73,7 @@ export const Projects = () => {
             {projects.map((project) => (
               <ProjectItem
                 key={project.id}
+                id={project.id}
                 name={project.name}
                 description={project.description}
                 url_github={project.url_github}

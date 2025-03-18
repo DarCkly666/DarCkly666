@@ -1,29 +1,28 @@
 import GitIcon from "../components/GitIcon";
 import GmailIcon from "../components/GmailIcon";
 import LinkedInIcon from "../components/LinkedInIcon";
+import logo from "../assets/logo.webp";
+import { data } from "../utils/constants";
 
 export const Home = () => {
   return (
     <div
+      id="main"
       className="min-h-screen flex flex-col md:flex-row items-center justify-evenly relative bg-[url('/src/assets/background.webp')] bg-no-repeat bg-cover bg-center px-4 md:px-10 lg:px-20 xl:px-40"
       style={{
         backgroundAttachment: "fixed",
         backgroundPosition: "center",
       }}
     >
-      <div className="flex flex-col items-center justify-center w-full md:w-1/2 space-y-4">
-        <img
-          src="https://avatars.githubusercontent.com/u/104137891?v=4"
-          alt="avatar"
-          className="w-48 h-48 md:w-64 md:h-64 rounded-full"
-        />
+      <div className="flex flex-col items-center justify-center w-full md:w-1/2 space-y-4 mt-32 md:mt-0">
+        <img src={logo} alt="avatar" className="w-80 md:w-4/5" />
       </div>
       <div className="flex flex-col items-start justify-center w-full md:w-1/2 space-y-4 bg-background/20 dark:bg-background-dark/20 backdrop-blur-sm rounded-xl p-6">
         <h1 className="text-4xl md:text-6xl font-bold w-full text-center md:text-start text-accent">
-          Charly RM
+          {data.name}
         </h1>
-        <p className="text-xl">
-          Hello! I'm Charly, apassionate{" "}
+        <p className="text-xl text-text-dark dark:text-text-dark/80">
+          Hello! I'm {data.name}, apassionate{" "}
           <span className="text-accent font-bold">web developer</span> with
           experience in building digital solutions that combine functionality
           and design. I specialize in creating modern, responsive web
@@ -37,7 +36,7 @@ export const Home = () => {
           <h2 className="text-xl font-bold">Connect with me</h2>
           <div className="flex space-x-2">
             <a
-              href="https://github.com/darckly666"
+              href={data.github}
               target="_blank"
               rel="noreferrer"
               className="flex items-center space-x-2 hover:text-gray-300"
@@ -47,7 +46,7 @@ export const Home = () => {
             </a>
             <span className="w-0.5 h-6 bg-background-dark dark:bg-background"></span>
             <a
-              href="https://www.linkedin.com/in/darckly666"
+              href={data.linkedin}
               target="_blank"
               rel="noreferrer"
               className="flex items-center space-x-2 hover:text-gray-300"
@@ -57,7 +56,7 @@ export const Home = () => {
             </a>
             <span className="w-0.5 h-6 bg-background-dark dark:bg-background"></span>
             <a
-              href="https://www.gmail.com"
+              href={`mailto:${data.email}`}
               target="_blank"
               rel="noreferrer"
               className="flex items-center space-x-2 hover:text-gray-300"

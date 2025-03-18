@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { data } from "../utils/constants";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,23 +27,28 @@ export const Navbar = () => {
   return (
     <>
       <div className="w-full flex items-center fixed px-4 md:px-10 lg:px-20 xl:px-40 z-10 py-4 md:py-6">
-        <nav className="justify-between items-center w-full h-full flex p-4 md:p-5 rounded-xl bg-background/20 dark:bg-background-dark/20 backdrop-blur-sm">
-          <a href="/" className="text-2xl font-bold text-white">
-            Darckly666
+        <nav className="justify-between items-center w-full h-full flex p-4 md:p-5 rounded-xl bg-background/20 dark:bg-background-dark/20 backdrop-blur-sm  text-text-dark">
+          <a href="/" className="text-2xl font-bold">
+            {data.alias}
           </a>
           <ul className="gap-x-10 hidden md:flex">
             <li>
-              <a href="/" className="hover:text-slate-500">
+              <a href="#main" className="hover:text-slate-500">
                 Home
               </a>
             </li>
             <li>
-              <a href="/about" className=" hover:text-slate-500">
-                About
+              <a href="#techs" className=" hover:text-slate-500">
+                Technologies
               </a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-slate-500">
+              <a href="#projects" className="hover:text-slate-500">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-slate-500">
                 Contact
               </a>
             </li>
@@ -55,9 +61,9 @@ export const Navbar = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -75,7 +81,7 @@ export const Navbar = () => {
       >
         <nav className="justify-between items-center w-full h-16 flex px-4 md:px-10 lg:px-20 xl:px-40">
           <a href="/" className="text-2xl font-bold">
-            Darckly666
+            {data.alias}
           </a>
           <span onClick={() => setIsOpen(false)}>
             <svg
@@ -85,9 +91,9 @@ export const Navbar = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="icon icon-tabler icons-tabler-outline icon-tabler-x"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -96,29 +102,27 @@ export const Navbar = () => {
             </svg>
           </span>
         </nav>
-        <ul className="gap-x-10 h-full text-xl text-center flex flex-col justify-evenly items-center">
+        <ul
+          className="gap-x-10 h-full text-xl text-center flex flex-col justify-evenly items-center"
+          onClick={() => setIsOpen(false)}
+        >
           <li>
-            <a href="/" className="hover:text-slate-500">
+            <a href="#main" className="hover:text-slate-500">
               Home
             </a>
           </li>
           <li>
-            <a href="/about" className=" hover:text-slate-500">
-              About
+            <a href="#techs" className=" hover:text-slate-500">
+              Technologies
             </a>
           </li>
           <li>
-            <a href="/contact" className="hover:text-slate-500">
-              Contact
+            <a href="#projects" className="hover:text-slate-500">
+              Projects
             </a>
           </li>
           <li>
-            <a href="/contact" className="hover:text-slate-500">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a href="/contact" className="hover:text-slate-500">
+            <a href="#contact" className="hover:text-slate-500">
               Contact
             </a>
           </li>
