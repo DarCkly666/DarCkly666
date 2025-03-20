@@ -19,7 +19,8 @@ const PROJECTS: IProject[] = [
     name: "Project 1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     url_github: "https://github.com/darckly666/project1",
-    image: "https://picsum.photos/id/10/200/300",
+    image:
+      "https://unsplash.com/photos/AKhkPXnobXw/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTh8fGJlYXV0aWZ1bCUyMGxhbmRzY2FwZSUyMHNub3d8ZW58MHwwfHx8MTc0MjMyNDU3M3ww&force=true&w=1920",
     techs: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
   },
   {
@@ -28,7 +29,8 @@ const PROJECTS: IProject[] = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     url_github: "https://github.com/darckly666/project2",
     url_preview: "https://project2.darckly666.vercel.app/",
-    image: "https://picsum.photos/id/10/200/300",
+    image:
+      "https://unsplash.com/photos/5RRseu8n_5s/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8cmFpbnklMjByb2FkfGVufDB8MHx8fDE3NDIzMjQ2NjR8MA&force=true&w=1920",
     techs: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
   },
   {
@@ -37,7 +39,8 @@ const PROJECTS: IProject[] = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     url_github: "https://github.com/darckly666/project3",
     url_preview: "https://project3.darckly666.vercel.app/",
-    image: "https://picsum.photos/id/10/200/300",
+    image:
+      "https://unsplash.com/photos/IoLxG5RR8aM/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTV8fHN1bm55JTIwcm9hZHxlbnwwfDB8fHwxNzQyMzI0Njg3fDA&force=true&w=1920",
     techs: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
   },
 ];
@@ -45,24 +48,15 @@ const PROJECTS: IProject[] = [
 export const Projects = () => {
   const [projects, setProjects] = useState<IProject[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [breakpoint, setBreakpoint] = useState<number>(0);
 
   useEffect(() => {
     const fetchProjects = () => {
       setTimeout(() => {
         setProjects(PROJECTS);
         setIsLoading(false);
-      }, 3000);
+      }, 1000);
     };
     fetchProjects();
-    window.addEventListener("resize", () => {
-      setBreakpoint(window.innerWidth);
-    });
-    return () => {
-      window.removeEventListener("resize", () => {
-        setBreakpoint(window.innerWidth);
-      });
-    };
   }, [projects]);
 
   return (
@@ -76,7 +70,7 @@ export const Projects = () => {
         </Slide>
       </div>
       <p className="py-6">Here are some of my projects:</p>
-      <div className="md:px-32">
+      <div className="">
         {isLoading ? (
           <div className="flex items-center justify-center h-full">
             <Fade>
@@ -89,11 +83,14 @@ export const Projects = () => {
               dots: true,
               infinite: true,
               speed: 500,
-              slidesToShow: breakpoint > 768 ? 2 : 1,
+              slidesToShow: 3,
               slidesToScroll: 1,
               autoplay: true,
               fade: true,
+              arrows: false,
+              centerPadding: "0px",
               fadeSpeed: 500,
+              centerMode: true,
             }}
           >
             {projects.map((project) => (

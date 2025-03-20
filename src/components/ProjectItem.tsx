@@ -10,11 +10,11 @@ export const ProjectItem: FC<IProject> = ({
   techs,
 }) => {
   return (
-    <div className="max-w-4xl flex flex-col md:flex-row bg-background/10 dark:bg-background-dark/20 backdrop-blur-xl">
-      <div className="w-full md:w-72 h-80 md:-skew-x-12 md:hover:skew-0 transition-all duration-300 ease-in-out">
-        <img src={image} alt={name} className="w-full h-full object-cover" />
-      </div>
-      <div className="p-4 md:-skew-x-12 space-y-2 ">
+    <div
+      className="flex bg-cover bg-center h-[400px] items-end"
+      style={{ backgroundImage: `url(${image})` }}
+    >
+      <div className="p-4 space-y-2 rounded bg-background/20 backdrop-blur dark:bg-background-dark/20">
         <h2 className="md:text-xl font-bold">{name}</h2>
         <p className="text-sm">{description}</p>
         <div className="flex space-x-4">
