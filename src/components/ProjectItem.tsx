@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { IProject } from "../pages/Projects";
+import { IProject } from "../app-types";
 
 export const ProjectItem: FC<IProject> = ({
   name,
