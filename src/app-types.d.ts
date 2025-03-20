@@ -12,3 +12,13 @@ export type IData = {
   github: string;
   linkedin: string;
 }
+
+export interface IProject {
+  id: number | string;
+  name: string;
+  description: string;
+  url_github: string;
+  url_preview?: string;
+  image: string;
+  techs: string[];
+}

@@ -5,5 +5,5 @@ export const data: IData = {
   alias: "DarCkly666",
   email: "darckly6@gmail.com",
   github: "https://github.com/darckly666",
-  linkedin: "https://www.linkedin.com/in/darckly666",
+  linkedin: "https://www.linkedin.com/in/charly-rodríguez-033728201/",
 }
